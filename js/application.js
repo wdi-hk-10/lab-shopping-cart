@@ -16,8 +16,20 @@ function newShoppingItem (){
     $("#entrypoint").prepend(whole);
   });
 }
-newShoppingItem();
 
+function removeShoppingItem (){
+    $("#entrypoint").on("click",".enter", function deleteEntry (){
+      $(this).parent().parent().remove();
+    });
+}
+
+
+
+
+
+
+newShoppingItem();
+removeShoppingItem();
 
 
 
