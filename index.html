@@ -15,6 +15,58 @@
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    
+    <section class = "container">
+      <header>
+        <h1   >Shopping Cart</h1>
+      </header>
+
+
+      <div id = "item-list">
+        <div class = "item-row">
+          <div class = "item-name col-xs-3">Salmon</div>
+          <div class = "item-price col-xs-3">60.00</div>
+          <div class = "item-qty col-xs-3">
+            <label>QTY</label>
+            <input class = "orderQty"></input>
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "item-sub col-xs-4">0.00</div><br>
+        </div>
+        <div class = "item-row">
+          <div class = "item-name col-xs-3">Tuna</div>
+          <div class = "item-price col-xs-3">60.00</div>
+          <div class = "item-qty col-xs-3">
+            <label>QTY</label>
+            <input class = "orderQty"></input>
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "item-sub col-xs-4">0.00</div><br>
+        </div>
+        <div class = "item-row">
+          <div class = "item-name col-xs-3">Carp</div>
+          <div class = "item-price col-xs-3">40.00</div>
+          <div class = "item-qty col-xs-3">
+            <label>QTY</label>
+            <input class = "orderQty"></input>
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "item-sub col-xs-4">0.00</div><br>
+        </div>
+      </div>
+
+      <div class = "Creator">
+        <input class = "prodName"></input>
+        <input class = "prodPrice"></input>
+        <button id = "newItemCreator">Create</button><br>
+      </div><br><br>
+
+      <button id = "updateTotal">Calculate Prices</button>
+
+      <footer>
+        <h1>Total Price:</h1>
+        <h1 id = "totalPrice">0.00</h1>
+      </footer>
+    </section>
+
   </body>
 </html>

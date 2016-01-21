@@ -1,0 +1,54 @@
+input {
+  width: 100px;
+}
+
+section~label {
+  width: 100px;
+
+footer {
+  float: left;
+  margin-top: 20px;
+}
+
+.Creator {
+  padding-top: 20px;
+}
+
+}
+#item-list {
+  clear: both;
+}
+.item-name{
+  width: 200px;
+
+}
+
+.item-price {
+  width: 200px;
+}
+
+.item-qty {
+  width: 600px;
+}
+
+.item-subtotal {
+  width: 100px;
+}
+
+.Creator {
+  float: left;
+  clear: both;
+}
+
+#updateTotal {
+  background-color: lightgreen;
+  float: right;
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 40px;
+}
+
+
+
+}
