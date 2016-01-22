@@ -18,6 +18,12 @@ footer {
 #item-list {
   clear: both;
 }
+
+.item-row {
+  clear: both;
+  max-width: 1920px;
+}
+
 .item-name{
   width: 200px;
 
@@ -28,7 +34,7 @@ footer {
 }
 
 .item-qty {
-  width: 600px;
+  width: 400px;
 }
 
 .item-subtotal {
@@ -38,6 +44,16 @@ footer {
 .Creator {
   float: left;
   clear: both;
+}
+
+.prodName {
+  margin-right: 50px;
+
+}
+
+.prodPrice {
+  margin-right: 50px;
+
 }
 
 #updateTotal {
