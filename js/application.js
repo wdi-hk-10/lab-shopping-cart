@@ -4,6 +4,13 @@ function newShoppingItem (){
   $("#addNewItem").on("click", function createEntry (){
     var goods = $("#inputItem").val();
     var goodsprice = $("#inputPrice").val();
+    if ($.isNumeric(goodsprice) == false) {
+      alert("Please input a number for the price field");
+      return;
+    } else if (goods=="") {
+      alert("Item name cannot be blank");
+      return;
+    }
     var newrow = $("<div>").addClass("row");
     var newname = $("<div>").addClass("col-md-3").text(goods);
     var newprice = $("<div>").addClass("col-md-3").addClass("pricing").text("$"+goodsprice);
@@ -42,10 +49,11 @@ function calculateTotals () {
     }
     var counter=0;
     $(".subtots").map(function(){
-      $(this).text("$"+subtotalarray[counter]);
+      $(this).text("$"+subtotalarray[counter].toFixed(2));
       counter = counter+1;
     })
-    $("#totalPrice").text("$"+finaltotal);
+    console.log(finaltotal);
+    $("#totalPrice").text("$"+finaltotal.toFixed(2));
   });
 }
 
