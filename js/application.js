@@ -49,6 +49,7 @@ function createItem (){
     $($insertItem).insertAfter($('#descriptionHeader'));
   }
   keyupQuantityInput();
+  deleteItemListener();
 }
 
 function deleteItem(){
@@ -59,11 +60,14 @@ function keyupQuantityInput(){
   $('.quantity').on("focusout",priceCalculation);
 }
 
-$('.cancel').on('click',deleteItem);
+function deleteItemListener(){
+  $('.cancel').on('click',deleteItem);
+}
+
 $('#create').on('click', createItem);
 $('').on()
 keyupQuantityInput();
-
+deleteItemListener();
 
 });
 
