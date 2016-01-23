@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 
 function priceCalculation (){
+  console.log ('listened');
   //1. Return Subtotal Price
   var listedPrice = $(this).parent().parent().find('.itemPrice').html().split('$')[1];
 
@@ -47,7 +48,7 @@ function createItem (){
   } else {
     $($insertItem).insertAfter($('#descriptionHeader'));
   }
-
+  keyupQuantityInput();
 }
 
 function deleteItem(){
