@@ -8,13 +8,87 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/application.js"></script>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    
+    <div class="container">
+      <h1>Shopping Cart</h1>
+
+
+    </div>
+    <div class ="container" id="itemList">
+      <div class="row" id ="descriptionHeader">
+        <div class="col-xs-3"><h2>Item</h2></div>
+        <div class="col-xs-3"><h2>Price</h2></div>
+        <div class="col-xs-3"><h2>Quantity</h2></div>
+        <div class="col-xs-3"><h2>Subtotal</h2></div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Salmon</div>
+        <div class="itemPrice col-xs-3">$60.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button class="cancel">Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Tuna</div>
+        <div class="itemPrice col-xs-3">$50.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button class="cancel">Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Carp</div>
+        <div class="itemPrice col-xs-3">$40.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button class="cancel">Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Pork</div>
+        <div class="itemPrice col-xs-3">$50.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button class="cancel">Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Beef</div>
+        <div class="itemPrice col-xs-3">$40.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button class="cancel">Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Chicken</div>
+        <div class="itemPrice col-xs-3">$25.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button>Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Cereal</div>
+        <div class="itemPrice col-xs-3">$15.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button class="cancel">Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row item">
+        <div class="itemName col-xs-3">Milk</div>
+        <div class="itemPrice col-xs-3">$10.00</div>
+        <div class="col-xs-3"><label style="padding-right: 5px">QTY</label><input class ='quantity' value='0'><button class="cancel">Cancel</button></div>
+        <div class="col-xs-3 subtotal">$0.00</div>
+      </div>
+      <div class="row" id="inputItem">
+        <div class="col-xs-3">
+          <input placeholder="Enter item">
+        </div>
+        <div class="col-xs-3">
+          <input placeholder="Enter price">
+        </div>
+        <div class="col-xs-6">
+          <button id="create">Create</button>
+        </div>
+      </div>
+
+      <div class="row" id="totalPrice" style="padding-left: 15px">
+        <h1>Total Price: $0.00</h1>
+      </div>
   </body>
 </html>
