@@ -1,160 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title>Shopping Cart</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/application.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
   </head>
+
   <body>
 
     <header>
-      <h1 class="col-xs-12">
-        Shopping Cart
-      </h1>
-      <container>
-        <row class="col-xs-12" id="items-list">
-          <div class="item-name col-xs-4">Salmon</div>
-          <div class="item-price col-xs-3">$99.99</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Tuna</div>
-          <div class="item-price col-xs-3">$80.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Carp</div>
-          <div class="item-price col-xs-3">$70.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Pork</div>
-          <div class="item-price col-xs-3">$60.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Beef</div>
-          <div class="item-price col-xs-3">$50.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Chicken</div>
-          <div class="item-price col-xs-3">$40.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Cereal</div>
-          <div class="item-price col-xs-3">$30.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</buton>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Milk</div>
-          <div class="item-price col-xs-3">$20.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class="item-name col-xs-4">Sugar</div>
-          <div class="item-price col-xs-3">$10.00</div>
-          <div class="item-qty col-xs-3">
-            <label>QTY</label>
-            <input class="quantity" value="0">
-            <button class="cancel">Cancel</button>
-          </div>
-          <div class="item-subtotal col-xs-2">$0.00</div>
-        </row>
-        <row class="col-xs-12">
-          <div class ="wrapper">
-            <div class="col-xs-4">
-              <input id="new-item-name">
-            </div>
-            <div class="col-xs-3">
-              <input id="new-item-unit-price">
-            </div>
-          </div> <!--wrapper div -->
-          <div class="col-xs-3">
-            <button id="new-item-create">Create</button>
-          </div>
-          <div class="col-xs-2">
-          </div>
-        </row>
-        <row>
-          <div class="col-xs-3 col-xs-offset-9">
-            <button id="calc-prices" type="button" class="btn btn-success">Calculate Prices</button>
-          </div>
-        </row>
-        </container>
-      </container>
+      <div>
+        <div>
+          <h1>Shopping Cart</h1>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <container>
-        <row>
-        </row>
-      </container>
-    </main>
+    <!-- Items: -->
+    <section id="items-list" class="container-fluid">
+      <div class="item-row">
+        <div class="item-name col-xs-4">Salmon</div>
+        <div class="item-price col-xs-3">$99.99</div>
+        <div class="item-qty col-xs-3">
+          <label>QTY</label>
+          <input class="quantity" value="0">
+          <button class="cancel">Cancel</button>
+        </div>
+        <div class="sub-total col-xs-2">$0.00</div>
+      </div>
+    </section>
 
+    <!-- Enter Items: -->
+     <section id="new-item" class="container-fluid">
+      <div class="row">
+        <div class="new-item-name col-xs-4">
+          <label>Item</label>
+          <input id="new-item-name">
+        </div>
+        <div class="new-item-price col-xs-4">
+          <label>Price</label>
+          <input id="new-item-price">
+        </div>
+        <div>
+          <button id="new-item-create">Create</button>
+        </div>
+      </div>
+    </section>
+
+      <!-- Calculate Price: -->
+      <section class="container-fluid">
+        <div>
+          <button id="calc-prices" type="button" class="btn btn-success">Calculate Prices</button>
+        </div>
+      </section>
+
+    <!-- Total Price: -->
     <footer>
-      <container>
-        <row>
-          <h1>
-            Total Price:
-          </h1>
-        </row>
-        <row>
-          <h1 id = "total-price">
-            $0.00
-          </h1>
-        </row>
-      </container>
+      <div>
+        <h1>Total Price:</h1>
+      </div>
+      <div id="total-price">
+        <h1>$0.00</h1>
+      </div>
     </footer>
-  </body>
 
+  </body>
 </html>
