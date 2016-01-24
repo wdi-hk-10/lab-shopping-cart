@@ -30,7 +30,7 @@ $(document).ready(function(){
 
       $('#items-list').prepend(newItem);
       // using animation
-      $(newItem).prependTo($('#items-list')).slideDown('slow');
+      //$(newItem).prependTo($('#items-list')).slideDown('slow');
     }
   };
 
@@ -44,11 +44,11 @@ $(document).ready(function(){
 
   //});
 
-  //var itemPrice = $('div.item-price.col-xs-3').text().substring(1);
-  //console.log(itemPrice);
+  var itemPrice = $('div.item-price.col-xs-3').text().substring(1);
+  console.log(itemPrice);
 
-  //var subTotal = $('div.item-subtotal.col-xs-2').text().substring(1);
-  //console.log(subTotal);
+  var subTotal = $('div.item-subtotal.col-xs-2').text().substring(1);
+  console.log(subTotal);
   //substring to remove the dollar sign
 
   //total price
@@ -62,7 +62,7 @@ $(document).ready(function(){
 
   });
 
-  $('button.cancel').click(function() {
+  $('button.cancel').on('click',function() {
     $(this).parent().parent().fadeOut("slow", function(){
       $(this).remove();
     });
