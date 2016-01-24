@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){ // do not remove
 //insert all code in here!
 
   //createItem();
@@ -6,12 +6,16 @@ $(document).ready(function(){
     console.log("connected");
     // must check price is integer
     var itemName = $('#new-item-name').val();
+    //var previousItem = $('item-name').text()//jules line
     var itemUnitPrice = $('#new-item-unit-price').val();
+
 
     if ($.isNumeric(itemUnitPrice) == false){
       alert('Unit price must be a number');
     } else if (itemName == ''){
       alert('Item name cannot be empty');
+    //} else if (itemName == previousItem){ //julesline
+    //  alert('Item name cannot be the same'); //julesline
     } else {
       itemUnitPrice = Number(itemUnitPrice).toFixed(2);
       var newItem = '' +
@@ -25,7 +29,7 @@ $(document).ready(function(){
           '<button class="cancel">Cancel</button>' +
         '</div>' +
         '<div class="item-subtotal col-xs-2"> $0.00 </div>' +
-        '</div>' + //jules line
+        '</row>' + //jules line
       '</div>';
 
       $('#items-list').prepend(newItem);
@@ -38,23 +42,30 @@ $(document).ready(function(){
     createItem();
   });
 
-  //sub total price
+
+  var itemPrice = parseFloat($('.item-price').text().substring(1)); //substring removes $ sign
+  //var subTotal = $('.item-subtotal').text().substring(1); //substring removes $ sign
+
+  //var Jules = $('.quantity').parent().closest('.item-price').text();
+
   //subTotalPrice();
-  //$('input.quantity').click(function(){
+  $('.quantity').on('click',function() {
+    var qty = parseInt($(this).val());
 
-  //});
+    var subTotal = (qty * itemPrice).toFixed(2);
 
-  var itemPrice = $('div.item-price.col-xs-3').text().substring(1);
+    //var itemPrice = qty.parent().text();
+
+  console.log(qty);
   console.log(itemPrice);
-
-  var subTotal = $('div.item-subtotal.col-xs-2').text().substring(1);
   console.log(subTotal);
-  //substring to remove the dollar sign
+
+  });
 
   //total price
   //totalPrice();
 
-  $('button#calc-prices').click(function() {
+  $('button#calc-prices').on('click',function() {
   });
 
   var total =
@@ -62,10 +73,11 @@ $(document).ready(function(){
 
   });
 
+  //Cancel button
   $('button.cancel').on('click',function() {
     $(this).parent().parent().fadeOut("slow", function(){
       $(this).remove();
     });
   });
 
-});
+}); // do not remove
