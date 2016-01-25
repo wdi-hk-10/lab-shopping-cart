@@ -8,13 +8,120 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/application.js"></script>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    
+    <section class="container">
+      <h1 id = "cart">Shopping Cart</h1>
+    </section>
+    <section class="container">
+      <ul class = "shopping-list">
+        <li class = "name row">
+          <div class = "item col-xs-4">Salmon</div>
+          <div class = "price col-xs-3">$60.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Tuna</div>
+          <div class = "price col-xs-3">$50.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Carp</div>
+          <div class = "price col-xs-3">$40.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Pork</div>
+          <div class = "price col-xs-3">$50.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Beef</div>
+          <div class = "price col-xs-3">$40.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Chicken</div>
+          <div class = "price col-xs-3">$25.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Cereal</div>
+          <div class = "price col-xs-3">$45.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Milk</div>
+          <div class = "price col-xs-3">$20.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class="name row">
+          <div class = "item col-xs-4">Sugar</div>
+          <div class = "price col-xs-3">$10.00</div>
+          <div class = "quantity col-xs-3">
+            <label>QTY</label>
+            <input class = "qty" value = "0">
+            <button class = "cancel">Cancel</button>
+          </div>
+          <div class = "subtotal col-xs-2">$0.00</div>
+        </li>
+        <li class = "addIn row">
+          <div class = "col-xs-4"><input class = "new-item"></div>
+          <div class = "col-xs-3"><input class = "new-price"></div>
+          <div class = "col-xs-3"><button class = "create">Create</button></div>
+        </li>
+
+      </ul>
+
+    </section>
+    <section class="container">
+      <h1 id = "lastLabel">Total Price:<h1>
+      <h1 id = "total-price">$0.00<h1>
+    </section>
   </body>
 </html>
