@@ -29,7 +29,7 @@ $(document).ready(function() {
       total += subtotal;
     });
     $('#total-price').text('$' + total.toFixed(2));
-  }
+  };
 
   $('.create').on('click', createNewRow);
   $('.cancel').on('click', deleteItem);
