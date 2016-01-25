@@ -5,17 +5,16 @@ $('document').ready(function(){
 
 //how do I create a "new row" and attach the variables to it?
 
-var newItemDescr = $('.descr-input').text();
+var newItemDescr = $('.descr-input').val();
 var newItemPrice = $('.price-input').val();
 
-
 $('.btn-create').on('click', function () {
-  console.log ('hello');
+  console.log ($('.descr-input').val());
+  console.log ($('.price-input').val());
+  $('<div>').appendTo($('#item-row'));
 });
 
 
-// $('.btn-create').on('click',function(){
-//   $('<div>').appendTo($('#item-row'));
 
 //   $('.btn-create').on('click',function(){
 //     $('.descr-input').appendTo($('#items-list')).before($('#item-row-first'));
@@ -30,10 +29,8 @@ $('.btn-create').on('click', function () {
 
   //subtotals
 
-
-
-  // var a = $('.item-price').val();
-  // var b = $('.quantity').val();
+  // var subPrice = $('.item-price').val();
+  // var subQuantity b = $('.quantity').val();
   // $('.quantity').keyup(function() {
   //   $('.item-subtotal').val(a * b);
   // });
