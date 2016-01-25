@@ -39,10 +39,12 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     $itemRow.append($quantity).append($subTotal);
 
     $itemsList.prepend($itemRow);
+
+    bindSubTotalPrice();// rebind all quantity elements
   };
 
-  function subTotalPrice() {
-    $('.quantity').on('click',function() {
+  function bindSubTotalPrice() {
+    $('.quantity').off().on('blur',function() {
       // obtain quantity and item price values
       var qty = parseInt($(this).val());
       console.log(qty);
@@ -56,13 +58,15 @@ $(document).ready(function(){ // do not remove - insert all code in here!
   };
 
   function calculateTotal() {
-    $('#calc-prices').on('click',function() {
-      console.log("hello");
-      var $allSubTotals = $('.sub-total');
-      console.log(allSubTotals);
-    });
+    var $allSubTotals = $('.sub-total').each(function(item,element){
+      var subtotal = parseFloat($(this).find(".item-subtotal").text().substring(1));
+      //still need to add the total
+      var total = total + subtotal;
+      });
+    total = Number(total).toFixed(2);
+    $('#total-price').text('$' + total);
   };
-  // substring and then parseFloat
+
 
   function cancelItem() {
     $('.cancel').on('click',function() {
@@ -72,11 +76,12 @@ $(document).ready(function(){ // do not remove - insert all code in here!
 
   // start shopping cart
   $('#new-item-create').on('click', function() {
-    //addItem(createItemName(), createItemPrice());
-    //subTotalPrice();
-    //cancelItem();
-    calculateTotal();
+    addItem(createItemName(), createItemPrice());
+    cancelItem();
   });
+
+  bindSubTotalPrice();
+  $('#calc-prices').on('click', calculateTotal);
 
 
 }); // do not remove
