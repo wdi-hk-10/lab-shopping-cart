@@ -3,7 +3,6 @@ $(document).ready(function(){
 
 
 function priceCalculation (){
-  console.log ('listened');
   //1. Return Subtotal Price
   var listedPrice = $(this).parent().parent().find('.itemPrice').html().split('$')[1];
 
@@ -11,7 +10,16 @@ function priceCalculation (){
 
   var subtotalPrice = $(this).parent().parent().find('.subtotal');
 
-  subtotalPrice.html('$'+(listedPrice * listedQuantity)+'.00');
+  // if listedQuantity is a whole number, return subtotal.
+
+  if ((listedQuantity)%1===0){
+    subtotalPrice.html('$'+(listedPrice * listedQuantity)+'.00');
+
+  } else {
+    $(this).css('border: 2px red solid')
+  }
+    ;
+
 
   //2. Return Total Price
 
@@ -50,6 +58,8 @@ function createItem (){
   }
   keyupQuantityInput();
   deleteItemListener();
+  $('#inputItem').find('input').eq(0).val('');
+  $('#inputItem').find('input').eq(1).val('');
 }
 
 function deleteItem(){
@@ -57,7 +67,7 @@ function deleteItem(){
 }
 
 function keyupQuantityInput(){
-  $('.quantity').on("focusout",priceCalculation);
+  $('.quantity').on("keyup",priceCalculation);
 }
 
 function deleteItemListener(){
