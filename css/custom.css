@@ -5,3 +5,7 @@ h1 {
   font-size: 36px;
   margin-top: 20px;
   margin-left: 30px;
+}
+#calc-prices {
+  float: right;
+}

@@ -1,109 +1,78 @@
-$(document).ready(function(){ // do not remove
+$(document).ready(function(){ // do not remove - insert all code in here!
   console.log("connected");
-  //insert all code in here!
 
-  var itemsList = $('#items-list');
+  var $itemsList = $('#items-list');
 
   function createItemName() {
     // obtain item value
-    var $newItem = $('#new-item-name').val();
-    // append item name into intem column
+    var newItem = $('#new-item-name').val();
+    // append item name into item name column
     var $itemName = $('<div>').addClass('item-name col-xs-4');
-    $newItem.append($itemName);
-    // append item column into list
-    $itemsList = $('#items-list');
-    $itemsList.append($newItem);
-    return $newItem;
+    $itemName.text(newItem);
+    // "<div class="item-name col-xs-4">Name</div>"
+    return $itemName;
   };
 
   function createItemPrice() {
-
+    // obtain price value
+    var newPrice = parseFloat($('#new-item-price').val()).toFixed(2);
+    // append item price into item price column
+    var $itemPrice = $('<div>').addClass('item-price col-xs-3');
+    $itemPrice.text("$" + newPrice);
+    // <div class="item-price col-xs-3">$price</div>
+    return $itemPrice;
   };
 
+  function addItem(name, price) {
+    // create item row
+    $itemRow = $('<div>').addClass('item-row');
+    $itemRow.append(name).append(price);
+    // create quantity input
+    var $quantity = $('<div>').addClass('item-qty col-xs-3');
+    var $quantityLabel = $('<label>').text("QTY");
+    var $quantityInput = $('<input>').attr({ class:'quantity', value:'0' });
+    var $cancelButton = $('<button>').addClass('cancel').text("Cancel")
+    $quantity.append($quantityLabel).append($quantityInput).append($cancelButton);
+    // create subtotal
+    var $subTotal = $('<div>').addClass('sub-total col-xs-2').text("$0.00");
+    // append item, price, quantity, subtotal to row
+    $itemRow.append($quantity).append($subTotal);
 
-
-  function createItem() {
-  //var createItem = function(){
-
-    // check price is a number
-    var itemName = $('#new-item-name').val();
-    //var previousItem = $('item-name').text()//jules line
-    var itemPrice = $('#new-item-price').val();
-
-
-    // if ($.isNumeric(itemPrice) == false){
-    //  alert('Price must be a number');
-    //} else if (itemName == ''){
-    // alert('Item name cannot be empty');
-    //} else {
-      itemPrice = Number(itemPrice).toFixed(2);
-      var newItem = '' +
-      '<row class="col-xs-12 ">' +
-        '<div class="item-name col-xs-4">'+ itemName + '</div>' +
-        '<div class="item-price col-xs-3">$'+ itemPrice + '</div>' +
-        '<div class="item-qty col-xs-3">' +
-          '<label>QTY</label>' +
-          '<input class="quantity" value="0">' +
-          '<button class="cancel">Cancel</button>' +
-        '</div>' +
-        '<div class="subtotal col-xs-2">$0.00</div>' +
-        '</row>'
-
-      $('#items-list').prepend(newItem);
-      // using animation
-      //$(newItem).prependTo($('#items-list')).slideDown('slow');
-    //}
+    $itemsList.prepend($itemRow);
   };
-
-  $('#new-item-create').on('click', function(){
-    createItem();
-  });
-
 
   //var itemPrice = parseFloat($('.item-price').text().substring(1)); //substring removes $ sign
   //var subTotal = $('.item-subtotal').text().substring(1); //substring removes $ sign
 
-  //var Jules = $('.quantity').parent().closest('.item-price').text();
-
   function subTotalPrice() {
     $('.quantity').on('click',function() {
+      // obtain quantity and item price values
       var qty = parseInt($(this).val());
-      var itemPrice = parseFloat($(this).parent().siblings('.item-price').html().split('$').splice(1,1)); //Jon
+      console.log(qty);
+      var itemPrice = parseFloat($(this).parent().siblings('.item-price').text().substring(1));
+      console.log(itemPrice);
+      // calculate total item price and update subtotal
       var subTotal = (qty * itemPrice).toFixed(2);
-      $(this).parent().siblings('.subTotal').text('$' + subTotal); //Jon
-    //var itemPrice = qty.parent().text();
-  console.log(qty);
-  console.log(itemPrice);
-  console.log(subTotal);
+      console.log(subTotal);
+      $(this).parent().siblings('.sub-total').text('$' + subTotal);
     });
   };
 
-  //total price
-  //totalPrice();
-
-  //$('button#calc-prices').on('click',function() {
-  //});
-
-  //var total =
-  //$('input.quantity').keyup(function(){
-
-  //});
-
+  // function calculateTotal() {
+  // substring and then parseFloat
 
   function cancelItem() {
     $('.cancel').on('click',function() {
       $(this).parent().parent().remove();
-      //$(this).parent().parent().fadeOut("slow", function(){
-        //$(this).remove();
-        //}
-      });
+    });
   };
 
-  //start shopping cart
-  //$('#submit').on('click', function() {
-    createItemName();
-    //subTotalPrice();
-    //cancelItem();
-  //});
+  // start shopping cart
+  $('#new-item-create').on('click', function() {
+    addItem(createItemName(), createItemPrice());
+    subTotalPrice();
+    cancelItem();
+  });
+
 
 }); // do not remove
