@@ -3,7 +3,7 @@ $(document).ready(function(){ // do not remove - insert all code in here!
 
   var $itemsList = $('#items-list');
 
-  function createItemName() {
+  function createItemName() {  // add code to prevent being left blank
     // obtain item value
     var newItem = $('#new-item-name').val();
     // append item name into item name column
@@ -13,7 +13,7 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     return $itemName;
   };
 
-  function createItemPrice() {
+  function createItemPrice() {  // add code to ensure input is a number
     // obtain price value
     var newPrice = parseFloat($('#new-item-price').val()).toFixed(2);
     // append item price into item price column
@@ -41,9 +41,6 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     $itemsList.prepend($itemRow);
   };
 
-  //var itemPrice = parseFloat($('.item-price').text().substring(1)); //substring removes $ sign
-  //var subTotal = $('.item-subtotal').text().substring(1); //substring removes $ sign
-
   function subTotalPrice() {
     $('.quantity').on('click',function() {
       // obtain quantity and item price values
@@ -58,7 +55,13 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     });
   };
 
-  // function calculateTotal() {
+  function calculateTotal() {
+    $('#calc-prices').on('click',function() {
+      console.log("hello");
+      var $allSubTotals = $('.sub-total');
+      console.log(allSubTotals);
+    });
+  };
   // substring and then parseFloat
 
   function cancelItem() {
@@ -69,9 +72,10 @@ $(document).ready(function(){ // do not remove - insert all code in here!
 
   // start shopping cart
   $('#new-item-create').on('click', function() {
-    addItem(createItemName(), createItemPrice());
-    subTotalPrice();
-    cancelItem();
+    //addItem(createItemName(), createItemPrice());
+    //subTotalPrice();
+    //cancelItem();
+    calculateTotal();
   });
 
 
