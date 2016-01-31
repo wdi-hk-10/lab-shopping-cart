@@ -57,14 +57,16 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     });
   };
 
+  //Code below needs fixing
   function calculateTotal() {
     var $allSubTotals = $('.sub-total').each(function(item,element){
       var subtotal = parseFloat($(this).find(".item-subtotal").text().substring(1));
       //still need to add the total
       var total = total + subtotal;
-      });
+      //});
     total = Number(total).toFixed(2);
     $('#total-price').text('$' + total);
+    });
   };
 
 
