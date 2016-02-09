@@ -3,7 +3,8 @@ $(document).ready(function(){ // do not remove - insert all code in here!
 
   var $itemsList = $('#items-list');
 
-  function createItemName() {  // add code to prevent being left blank
+  function createItemName() {
+    // add code to prevent blank value being submitted
     // obtain item value
     var newItem = $('#new-item-name').val();
     // append item name into item name column
@@ -13,7 +14,8 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     return $itemName;
   };
 
-  function createItemPrice() {  // add code to ensure input is a number
+  function createItemPrice() {
+    // add code to ensure input is a number
     // obtain price value
     var newPrice = parseFloat($('#new-item-price').val()).toFixed(2);
     // append item price into item price column
@@ -74,14 +76,17 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     });
   };
 
-  // start shopping cart
-  $('#new-item-create').on('click', function() {
-    addItem(createItemName(), createItemPrice());
-    cancelItem();
-  });
+  function init() {
+    $('#new-item-create').on('click', function() {
+      addItem(createItemName(), createItemPrice());
+      cancelItem();
+    });
+  };
 
   bindSubTotalPrice();
   $('#calc-prices').on('click', calculateTotal);
 
+  //start shopping cart
+  init();
 
 }); // do not remove
