@@ -1,6 +1,7 @@
 $(document).ready(function(){ // do not remove - insert all code in here!
   console.log("connected");
 
+
   var $itemsList = $('#items-list');
 
   function createItemName() {  // add code to prevent being left blank
@@ -38,50 +39,52 @@ $(document).ready(function(){ // do not remove - insert all code in here!
     // append item, price, quantity, subtotal to row
     $itemRow.append($quantity).append($subTotal);
 
-    $itemsList.prepend($itemRow);
+    $('#items-list').prepend($itemRow);
 
-    bindSubTotalPrice();// rebind all quantity elements
+    //totals(); // rebind all quantity elements
   };
 
-  function bindSubTotalPrice() {
+  function totals() {
     $('.quantity').off().on('blur',function() {
-      // obtain quantity and item price values
+      // obtain quantity value
       var qty = parseInt($(this).val());
-      console.log(qty);
+      // obtain item price value
       var itemPrice = parseFloat($(this).parent().siblings('.item-price').text().substring(1));
-      console.log(itemPrice);
       // calculate total item price and update subtotal
-      var subTotal = (qty * itemPrice).toFixed(2);
-      console.log(subTotal);
-      $(this).parent().siblings('.sub-total').text('$' + subTotal);
+      var subtotal = parseFloat(qty * itemPrice).toFixed(2);
+      // display subTotal prices
+      $(this).parent().siblings('.sub-total').text('$' + subtotal);
+      //calculate total
+      var total = 0;
+      //$('.sub-total').each(function(){
+      //  var subtotal = parseFloat($(this).text().substring(1));
+      //  total += subtotal;
+      //  var $totalPrice = $('#total-price').children(); // var $totalPrice = $('.total > h1');
+      //  $totalPrice.text("$" + total.toFixed(2));
+      //  console.log(subtotal, total, $totalPrice);
+      // });
     });
   };
 
-  function calculateTotal() {
-    var total = 0;
-      $('.sub-total').each(function(){
-      var subtotal = parseFloat($(this).text().substring(1));
-      total += subtotal;
-      var $totalPrice = $('#total-price > h1');
-      $totalPrice.text("$" + total.toFixed(2));
-      console.log(subtotal, total, $totalPrice);
-      });
-  };
-
+  // start shopping cart
   function cancelItem() {
     $('.cancel').on('click',function() {
       $(this).parent().parent().remove();
     });
   };
 
-  // start shopping cart
   $('#new-item-create').on('click', function() {
     addItem(createItemName(), createItemPrice());
     cancelItem();
   });
 
-  bindSubTotalPrice();
-  $('#calc-prices').on('click', calculateTotal);
+ // initiate shopping cart; click to add item to shopping cart
+  $('#calc-prices').on('click', function() {
+    addItem(createItemName, createItemPrice)
+    totals();
+    cancelItem();
+  });
+
 
 
 }); // do not remove
