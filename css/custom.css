@@ -1,0 +1,70 @@
+input {
+  width: 100px;
+}
+
+section~label {
+  width: 100px;
+
+footer {
+  float: left;
+  margin-top: 20px;
+}
+
+.Creator {
+  padding-top: 20px;
+}
+
+}
+#item-list {
+  clear: both;
+}
+
+.item-row {
+  clear: both;
+  max-width: 1920px;
+}
+
+.item-name{
+  width: 200px;
+
+}
+
+.item-price {
+  width: 200px;
+}
+
+.item-qty {
+  width: 400px;
+}
+
+.item-subtotal {
+  width: 100px;
+}
+
+.Creator {
+  float: left;
+  clear: both;
+}
+
+.prodName {
+  margin-right: 50px;
+
+}
+
+.prodPrice {
+  margin-right: 50px;
+
+}
+
+#updateTotal {
+  background-color: lightgreen;
+  float: right;
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 40px;
+}
+
+
+
+}
